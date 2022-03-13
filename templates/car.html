@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!--Register a new car -->
+<div class="form_log">
+    <h2 style="text-align: center">Register a new car</h2>
+    <div class="container_login"> 
+        <form action="/car" method="post">  
+            <!--First input car type-->
+            <label for="car_type">Car type:</label>
+                <input type="text" placeholder="Select car type" name="car_type" list="car_type" autocomplete="off" required autofocus>
+                    <datalist id="car_type">
+                        {% for list in list %}
+                            <option value="{{ list }}">
+                        {% endfor %}
+                    </datalist>
+            <!--Second input plate number-->
+            <label for="plate_number">Plate number:</label>
+                <input type="text" placeholder="Enter plate number" name="plate_number" autocomplete="off" required>
+            <!--Button-->
+            <button type="submit" class="but-log font-g">Add car</button>
+        </form>   
+
+        <!--Flash messages if form is not correctly filled in-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p class="font-g">{{ msg }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+
+{% endblock %}

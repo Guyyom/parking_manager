@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!--Reservation form-->
+<div class="form_log">
+    <h2 style="text-align: center">New booking</h2>
+    <div class="container_login">
+        <form action="/reservation" method="post">  
+            <!--First input date in-->
+            <label for="date_in">Date in:</label>
+                <input type="date" placeholder="Choose your start date" name="date_in" autocomplete="off" required autofocus>
+            <!--Second input date out-->
+            <label for="date_out">Date out:</label>
+                <input type="date" placeholder="Choose your end date" name="date_out" autocomplete="off" required>
+            <!--Third input cars, based on plate number of the user-->
+            <label for="car_type">My cars:</label>
+                <input type="text" placeholder="Select your car" name="plate_number" list="plate_number" autocomplete="off" required>
+                    <datalist id="plate_number">
+                        {% for car in car %}
+                            <option value="{{ car.plate_number }}">
+                        {% endfor %}
+                    </datalist>
+            <!--Button-->
+            <button type="submit" class="but-log font-g">Confirm booking</button>
+        </form>   
+
+        <!--Messages in case of failure-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p class="font-g">{{ msg }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+
+{% endblock %}

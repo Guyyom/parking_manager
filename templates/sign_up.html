@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!--Sign up form-->
+<div class="form_log">
+    <h2 style="text-align: center">Sign up</h2>
+    <div class="container_login">
+        <form action="/sign_up" method="post">  
+            <!--First input element Username-->
+            <label for="uname">Username:</label>
+                <input type="text" placeholder="Enter Username" name="uname" required autofocus>
+            <!--Second input element Password-->
+            <label for="psw1">Password:</label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+            <!--Third input element Password confirmation-->
+            <label for="psw2">Password confirmation:</label>
+                <input type="password" placeholder="Retype Password" name="confirmation" required>
+            <!--Fourth input element Email-->
+            <label for="email">Email:</label>
+                <input type="email" placeholder="Enter Email" name="email" required autocomplete="on">  
+            <!--Button-->
+            <button type="submit" class="but-log font-g">Send</button>
+        </form>    
+
+        <!--Messages in case of failure-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                    <p class="font-g">{{ msg }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+
+{% endblock %}

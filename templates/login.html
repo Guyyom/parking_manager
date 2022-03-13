@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!--Log in form-->
+<div class="form_log">
+  <div class="container_login">
+    <form action="/login" method="post">  
+      <!--First input email adress, is used as the single element to identify users in db-->
+      <label for="email">Email address:</label>
+        <input type="email" placeholder="Enter email address" name="email" required autofocus autocomplete="on"> 
+      <!--Second input Password-->
+      <label for="password">Password:</label>
+        <input type="password" placeholder="Enter Password" name="password" autocomplete="off" required>    
+      <!--Button-->
+      <button type="submit" class="but-log font-g">Login</button>
+    </form>    
+  </div>
+
+  <!--Sign up button if not already signed up-->
+  <div class="form_log_bis">  
+    <form action="/sign_up">
+      <button type="submit" class="signinbtn font-g">Sign up</button>
+    </form>  
+  </div>
+
+  <!--Messages in case of failures-->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+          <p class="font-g">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+</div>
+
+{% endblock %}  

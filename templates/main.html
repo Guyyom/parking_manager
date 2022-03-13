@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!--Welcome-->
+<div class="main">
+    <span class="font-g" style="font-size: 30px">Welcome: <b>{{ username }}</b></span>
+</div>
+
+<!--Planning table-->
+<div class="main_2" style="text-indent: 15px">
+    <p style="font-size: 20px">Your planning:</p>
+</div>
+
+<div class="container form-main">
+    <div class="row">
+        <div class="col-12 font-g">
+            <table>
+                <tr>
+                    <th>Parking number</th>
+                    <th>Your car</th>
+                    <th>Date in</th>
+                    <th>Date out</th>
+                    <th></th>
+                </tr>
+                {% for reservation in reservation %}
+                    <tr>
+                        <td style="color:red">{{ reservation.id_parking_number }}</td>
+                        <td>{{ reservation.plate_number }}</td>
+                        <td>{{ reservation.date_in }}</td>
+                        <td>{{ reservation.date_out }}</td>
+                        <td>           
+                            <form action="delete_reservation" method="post" onsubmit="return confirmSubmit()">
+                                <input type="hidden" display="none" name="id_reservation" value="{{ reservation.id_reservation }}">
+                                <button class="but-del" type="submit">Delete booking</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <!--Button to book a new reservartion-->
+    <div class="row margin-top-20">
+        <div class="col-md-4">
+            <form action="reservation">
+                <button class="but-log font-g" type="submit">New booking</button>
+            </form>
+        </div>
+    </div>
+    <!--Messages in case of failures-->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p class="font-g">{{ msg }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<!--Car table-->
+<div class="main_2" style="text-indent: 15px">
+    <p style="font-size: 20px">Your cars:</p>
+</div>
+
+<div class="container form-main">
+    <div class="row font-g">
+        <div class="col-12">
+            <table>
+                <tr>
+                    <th>Plate number</th>
+                    <th>Car type</th>
+                    <th></th>
+                </tr>
+                {% for car in car %}
+                <tr>
+                    <td>{{ car.plate_number }}</td>
+                    <td>{{ car.car_type }}</td>
+                    <td>
+                    <form action="delete_car" method="post" onsubmit="return confirmSubmit()">
+                        <input type="hidden" display="none" name="id_car" value="{{ car.id_car }}">
+                        <button class="but-del" type="submit">Delete car</button>
+                    </form>
+                    </td>    
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <!--Button to register a new car-->
+    <div class="row margin-top-20">
+        <div class="col-md-4">
+            <form action="car">
+                <button class="but-log font-g" type="submit">Register a new car</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+
+<script LANGUAGE="JavaScript">
+function confirmSubmit()
+{
+var agree=confirm("Are you sure ?");
+if (agree)
+ return true ;
+else
+ return false ;
+}
+</script>
+
+{% endblock %}
