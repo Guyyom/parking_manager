@@ -36,15 +36,10 @@ This improvement of the system will be planned in v2.0
 
 ### Main.db
 In the DB you will find 4 different table:
-> users
-Store all users data
-> cars
-Store all cars data
-> reservations
-Store every reservations made
-> parking
-Location where you can implement the number of parking slots needed. Parking slots are limited by the system to 20. It can be augmented by modifying the parking table in the database. 
-In this table are only 2 columns, ID (autoincremented not null integer) and Parking number (not null integer), currently from 1 to 20.
+> users : Store all users data
+> cars :Store all cars data
+> reservations :Store every reservations made
+> parking :Location where you can implement the number of parking slots needed. Parking slots are limited by the system to 20. It can be augmented by modifying the parking table in the database. In this table are only 2 columns, ID (autoincremented not null integer) and Parking number (not null integer), currently from 1 to 20.
 
 ### Miscealaneous
 For praticity reasons, most of the protection have been set on client side. Meaning that this app shall be used only on local network. 
