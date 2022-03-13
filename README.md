@@ -29,8 +29,8 @@ The system is also designed to block any hijacking such as :
 
 ### car.html
 The page allows the user to add a new car based on 2 different criterias : 
-> Car type (choice between 3 types): SUV, Sedan, City
-> Plate number 
+- Car type (choice between 3 types): SUV, Sedan, City
+- Plate number 
 The car type will be used to automatically atribute adapted parking slots depending on the size of the vehicle. SUV shall be considered as bigger vehicle than a city car. 
 This improvement of the system will be planned in v2.0
 
