@@ -13,8 +13,8 @@ All the information are stored in the users table in main.db, with a hash system
 
 ### Index.html
 In the Index you will find 2 different lists:
-> Parking
-> Car
+- Parking
+- Car
 In order to be able to book a new parking slot, the users must first register a car. You can register as many car as you need.
 You the have the possibility to perform a new booking : redirects you to booking.html
 Or you have the ability to Add a new car : redirects you to car.html
@@ -36,28 +36,28 @@ This improvement of the system will be planned in v2.0
 
 ### Main.db
 In the DB you will find 4 different table:
-> users : Store all users data
-> cars :Store all cars data
-> reservations :Store every reservations made
-> parking :Location where you can implement the number of parking slots needed. Parking slots are limited by the system to 20. It can be augmented by modifying the parking table in the database. In this table are only 2 columns, ID (autoincremented not null integer) and Parking number (not null integer), currently from 1 to 20.
+- users : Store all users data
+- cars :Store all cars data
+- reservations :Store every reservations made
+- parking : Location where you can implement the number of parking slots needed. Parking slots are limited by the system to 20. It can be augmented by modifying the parking table in the database. In this table are only 2 columns, ID (autoincremented not null integer) and Parking number (not null integer), currently from 1 to 20.
 
 ### Miscealaneous
 For praticity reasons, most of the protection have been set on client side. Meaning that this app shall be used only on local network. 
 This version doesn't include
-> Admin access 
-> Mail notification (currently I didn't find any sustainable solution with Flask to use easily mail notification - based on the CS50 course, the lib used for mailing is Flask-Mail, unfortunately Google is blocking its "Less Secure App" system, in order to reinforce users protection. https://support.google.com/accounts/answer/6010255?hl=en) 
-> Management of the history 
-> Password reset : This must be implemented jointly with mail notification.
+- Admin access 
+- Mail notification (currently I didn't find any sustainable solution with Flask to use easily mail notification - based on the CS50 course, the lib used for mailing is Flask-Mail, unfortunately Google is blocking its "Less Secure App" system, in order to reinforce users protection. https://support.google.com/accounts/answer/6010255?hl=en) 
+- Management of the history 
+- Password reset : This must be implemented jointly with mail notification.
 
 ### Used framework and code
 The currenct project has been set up with : 
-> Python
-> CSS 
-> HTML 
-> Javascript
+- Python
+- CSS 
+- HTML 
+- Javascript
 Framework : 
-> Flask
-> Bootstrap
+- Flask
+- Bootstrap
 
 ### How to launch application
 
@@ -65,52 +65,3 @@ Clone the code: git clone https://github.com/Guyyom/parking_manager
 Once installed initiate a virutal environment with Flask, more here: https://flask.palletsprojects.com/en/2.0.x/installation/
 In your browser go to localhost:5000
 You are ready to go!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
