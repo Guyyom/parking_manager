@@ -1,0 +1,217 @@
+.font-g, h1, h2, h3, p {
+    font-family:'Raleway Dots', cursive;
+} /* With ',' CSS rule will apply equally to the group of selector */
+
+label{
+    font-family: 'Raleway Dots', cursive;
+}
+
+.font-logo{
+    font-family: 'Codystar', cursive;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+/* --- Footer ---*/
+.footer{
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+
+.footer span{
+    font-size: 12px;
+    color: black;
+    padding: auto;
+    margin: auto;
+}
+
+.footer span a{
+    color:black;
+}
+
+/* --- CSS Login page / Signup page--- */
+.form_log {
+    position: relative;
+    border: 3px solid #f1f1f1;
+    margin-left: auto;
+    margin-right: auto; 
+    width:400px;
+    margin-top: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+}
+
+.form_log p {
+    color : red;
+    font-size: 16px;
+    text-align: center;
+}
+
+.form_log_bis {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto; 
+    width:380px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container_login {
+    padding: 10px;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=date] {
+    width: 100%;
+    padding: 6px 12px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.but-log {
+    background-color: #606c5a;
+    border-radius: 20px;
+    color: white;
+    padding: 6px 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.but-log:hover {
+    opacity: 0.8;
+}
+
+.signinbtn {
+    width: 150px;
+    border-radius: 20px;
+    padding: 6px 12px;
+    background-color: rgba(201, 227, 204, 0.4);
+    color: black;
+    border: none;
+}
+
+.signinbtn:hover{
+    background-color: rgb(201, 227, 204);  
+}
+
+.psw {
+    float: right;
+    padding-top: 5px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+.psw {
+    display: block;
+    float: none;
+    }
+.signinbtn {
+    max-width: auto;
+    display: block;
+    float: none;
+    }
+}
+
+/* ----- NAVBAR ----- */
+/* --- Hover effect strat --- */
+.nav-alignment {
+    display: flex;
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+.nav-alignment a{
+    margin-right: 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    position: relative;
+}
+
+.effect::after  {
+    content: '';
+    width: 100%;
+    position: absolute;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:#606c5a;
+    transform-origin: bottom right;
+    transition: transform 0.45s ease-out;
+}
+
+.effect:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  /*--- Hover effect end ---*/
+
+nav button {
+    margin-right: 15px; 
+    margin-left: auto;
+}
+
+  /*---Main Page---*/
+
+table {
+    margin: auto;
+    width: 100%;
+}
+
+.main {
+      width: 1000px;
+      margin-top : 30px;
+      margin-bottom: 30px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+.main_2 {
+    width: 1000px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-main {
+    position: relative;
+    border: 3px solid #f1f1f1;
+    margin-left: auto;
+    margin-right: auto; 
+    width: 1000px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-main p {
+    color : red;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.but-del {
+    background-color: #6c5a5a;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.but-del:hover {
+    background-color: #9c8383;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}   
